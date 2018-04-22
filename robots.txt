@@ -1,0 +1,12 @@
+/* GUY */
+  Author: Luis Gines
+  Contact:
+  Website:
+  From: Raleigh, NC
+
+
+/* SITE */
+  Language: English
+  Standards: HTML5, CSS3
+  Components: jQuery, Siema
+  Software: Gulp, VS Code
