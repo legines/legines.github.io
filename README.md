@@ -1,4 +1,4 @@
-# gines.dev portfolio
+# gines.dev
 New professional portfolio
 
 * v0.5:
