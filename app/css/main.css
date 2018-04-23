@@ -1,3 +1,226 @@
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  width: 100vw;
+  max-width: 100vw;
+  height: 7rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  font-family: 'Inter UI', sans-serif; 
+}
+  @media screen and (max-width: 850px) {
+    .nav {
+      height: 5rem; 
+    } 
+  }
+
+.nav_logo {
+  width: 15rem;
+  border-bottom: none;
+  margin: 1rem 0 0 1.5rem; 
+}
+  @media screen and (max-width: 850px) {
+    .nav_logo {
+      width: 12rem; 
+    } 
+  }
+
+.nav_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  padding: 3rem 0 0 0;
+  list-style: none; 
+}
+  @media screen and (max-width: 850px) {
+    .nav_list {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -ms-flex-negative: 0;
+      flex-shrink: 0;
+      -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+      flex-grow: 0;
+      position: fixed;
+      left: 0;
+      top: -100vh;
+      width: 100vw;
+      padding: 0;
+      z-index: 1;
+      list-style: none;
+      background-color: inherit;
+      height: 100vh;
+      -webkit-transition: 0.3s all;
+      transition: 0.3s all; 
+    }
+      .nav_list--expanded {
+        top: -4rem;
+        -webkit-transition: 0.3s all;
+        transition: 0.3s all; 
+      } 
+    }
+
+.nav_item {
+  color: #f4f0e6;  
+  font-size: 2rem;
+  display: block;
+  padding: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  margin: 0 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0; 
+}
+  @media screen and (max-width: 767px) {
+    .nav_item {
+      width: 100vw;
+      font-size: 2.2rem;
+      text-align: center;
+      z-index: 4;
+      padding: 1rem 0 1rem 0;
+      margin: 0 1rem; 
+    } 
+  }
+  @media screen and (min-width: 768px) and (max-width: 950px) {
+    .nav_item {
+      margin: 0 1rem; 
+    } 
+  }
+  @media screen and (min-width: 951px) and (max-width: 1200px) {
+    .nav_item {
+      margin: 0 2rem; 
+    } 
+  }
+.nav_link.theme_link, .button.theme_link{
+  color: #f4f0e6;  
+}
+
+.nav_link {
+  text-decoration: none;
+  z-index: 5; 
+}
+  @media screen and (min-width: 851px) {
+    .nav_link {
+      position: relative; 
+    }
+      .nav_link::before {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 100%;
+        right: 50%;
+        -webkit-transform: tranlateX(50%);
+        transform: tranlateX(50%);
+        height: 2px;
+        width: 0;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s; 
+      }
+      .nav_link::after {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 100%;
+        left: 50%;
+        -webkit-transform: tranlateX(-50%);
+        transform: tranlateX(-50%);
+        height: 2px;
+        width: 0;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s; 
+      }
+      .nav_link:hover::before, .nav_link:focus::before {
+        width: 55%;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s; 
+      }
+      .nav_link:hover::after, .nav_link:focus::after {
+        width: 55%;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s; 
+      } 
+    }
+  .nav_link_start {
+    position: fixed;
+    top: 2rem;
+    left: 3rem;
+    z-index: 5; 
+  }
+    @media screen and (max-width: 850px) {
+      .nav_link_start {
+        top: 0.5rem;
+        left: 1rem; 
+      } 
+    }
+
+.nav_link.theme_link::before{
+  background-color: #555555;
+}
+.nav_link.theme_link::after{
+  background-color: #555555;
+}
+  
+
 .overlay_text{
   font-size: 5rem;
   opacity: 0;
@@ -75,3 +298,50 @@
 @media screen and (max-width: 800px) {
   .skillTexr {
     font-size: 1.4rem; } }
+
+
+body {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  width: 100vw;
+  max-width: 100vw;
+  min-height: 100vh;
+  position: relative; 
+  overflow: hidden;
+  background-color: #333333;
+}
+
+.overflow-on {
+  overflow-x: hidden;
+  overflow-y: auto; 
+}
+
+.overflow-off {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-box-flex: 0;
+  -ms-flex-positive: 0;
+  flex-grow: 0;
+  min-height: 100vh;
+  width: 100vw;
+  max-width: 100vw; 
+}
