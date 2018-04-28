@@ -1,6 +1,16 @@
 # gines.dev
 New professional portfolio
 
+
+
+* v0.30: Styling Progress
+    * all elements have been styled
+    * TODO: Into overlay wont completely fade out, breaking interactivity
+    * TODO: Get other fade in elements to work
+    * TODO: Fonts, Icons, and logo
+    * TODO: Time functions for age and varying intros
+    * TODO: Siema for carousel
+    * TODO: Make mobile responsive
 * v0.20:
     * Trianglify works but background images stretch too much
     * Removed trianglify, picked solid bg color
