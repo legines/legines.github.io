@@ -1,4 +1,7 @@
 // Elements
+const body = document.getElementById("body");
+const container = document.querySelector(".container");
+const allLinks = document.getElementsByTagName("a");
 const overlay = document.querySelector(".overlay");
 const overlayText = document.querySelector(".overlay_text");
 
@@ -6,7 +9,7 @@ const overlayText = document.querySelector(".overlay_text");
 const start = document.getElementById("start");
 const about = document.getElementById("about");
 const projects = document.getElementById("projects");
-const contact = "";
+const contact = document.getElementById("contact");
 const sectionTitle = document.querySelector(".section_title_start");
 const sectionSubtitle = document.querySelector(".section_subtitle_start");
 
@@ -19,13 +22,25 @@ const footYear = document.getElementById("foot_year");
 const footLink = document.querySelector(".foot_link");
 
 // Projects elements
-const projectTitle = document.querySelectorAll(".projects__title");
-const projectTag = document.querySelectorAll(".projects__tag");
-const projectPhoto = document.querySelectorAll(".projects__photo");
-const projectsLinks = document.querySelectorAll(".projects__link");
-const navInfo = document.querySelector(".projects__nav-info");
-const prev = document.querySelector(".projects__prev");
-const next = document.querySelector(".projects__next");
+const projectTitle = document.querySelectorAll(".projects_title");
+const projectTag = document.querySelectorAll(".projects_tag");
+const projectPhoto = document.querySelectorAll(".projects_photo");
+const projectsLinks = document.querySelectorAll(".projects_link");
+const navInfo = document.querySelector(".projects_nav_info");
+const prev = document.querySelector(".projects_prev");
+const next = document.querySelector(".projects_next");
+
+// Form elements
+const form = document.querySelector(".form");
+const formButton = document.querySelector(".form__button");
+const inputMail = document.querySelector(".form__input--mail");
+const inputPhone = document.querySelector(".form__input--phone");
+const textarea = document.querySelector(".form__textarea");
+const inputFail = document.getElementsByClassName("input__fail");
+
+// Form RegEx checks
+const checkPhone = /(^[5-9]{1}[0-9]{8}$)|(^$)/;
+const checkMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 // Main function that loads theme settings from localStorage and displays welcome text, and blocks project links
 document.addEventListener("DOMContentLoaded", () => {
@@ -99,18 +114,28 @@ function showStart() {
   start.classList.remove("visuallyhidden_section");
   about.classList.add("visuallyhidden_section");
   projects.classList.add("visuallyhidden_section");
+  contact.classList.add("visuallyhidden_section")
 }
 
 function showAbout() {
   start.classList.add("visuallyhidden_section");
   about.classList.remove("visuallyhidden_section");
   projects.classList.add("visuallyhidden_section");
+  contact.classList.add("visuallyhidden_section");
 }
 
 function showProjects() {
   start.classList.add("visuallyhidden_section");
   about.classList.add("visuallyhidden_section");
   projects.classList.remove("visuallyhidden_section");
+  contact.classList.add("visuallyhidden_section");
+}
+
+function showContact() {
+  start.classList.add("visuallyhidden_section");
+  about.classList.add("visuallyhidden_section");
+  projects.classList.add("visuallyhidden_section");
+  contact.classList.remove("visuallyhidden_section");
 }
 
 //Removes overlay after animation finishes
@@ -137,6 +162,9 @@ function hideShow() {
   } else if (window.location.hash === "#projects") {
     overflowOn();
     showProjects();
+  } else if (window.location.hash === "#contact") {
+    overflowOn();
+    showContact();
   }
 };
 
@@ -156,31 +184,31 @@ class mySiema extends Siema {
 
   checkSlide() {
     // Add or remove an "active" class for current slide
-    this.slides = document.querySelectorAll(".projects__project");
+    this.slides = document.querySelectorAll(".projects_project");
     let currentActiveSlide = this.slides.item(this.currentSlide);
     for (let slide of this.slides) {
-      slide.classList.remove("projects__project--active");
+      slide.classList.remove("projects_project_active");
     }
-    currentActiveSlide.classList.add("projects__project--active");
+    currentActiveSlide.classList.add("projects_project_active");
     for (let link of projectsLinks) {
       link.setAttribute("tabIndex", "-1");
     }
     // TODO: 
     // Need to improve that so that it works only in projects section
-    let activeLinks = currentActiveSlide.querySelectorAll(".projects__link");
+    let activeLinks = currentActiveSlide.querySelectorAll(".projects_link");
     for (let link of activeLinks) {
       link.setAttribute("tabIndex", "0");
     }
     // Disable or enable nav buttons depending of current slide index
     if (this.currentSlide === 0) {
-      prev.classList.add("projects__prev--disabled");
-      navInfo.classList.remove("projects__nav-info--hidden");
+      prev.classList.add("projects_prev_disabled");
+      navInfo.classList.remove("projects_nav_info_hidden");
     } else if (this.currentSlide === 8) {
-      next.classList.add("projects__next--disabled");
+      next.classList.add("projects_next_disabled");
     } else {
-      navInfo.classList.add("projects__nav-info--hidden");
-      prev.classList.remove("projects__prev--disabled");
-      next.classList.remove("projects__next--disabled");
+      navInfo.classList.add("projects_nav_info_hidden");
+      prev.classList.remove("projects_prev_disabled");
+      next.classList.remove("projects_next_disabled");
     }
   }
 };
@@ -210,5 +238,114 @@ document.addEventListener("keyup", (event) => {
     } else if (event.key === "ArrowLeft") {
       mySiemaWithDots.prev();
     }
+  }
+});
+
+// Form validation
+
+function validateForm() {
+  let emailValue = inputMail.value;
+  let phoneValue = inputPhone.value;
+  let message = textarea.value;
+  inputMail.classList.remove("form_input_invalidated");
+  inputPhone.classList.remove("form_input_invalidated");
+  textarea.classList.remove("form_input_invalidated");
+  if (checkMail.test(emailValue) === false) {
+    const mailFailPL = "Podaj prawidłowy adres e-mail";
+    const mailFailENG = "Please provide a valid email address";
+    let newP = document.createElement("p");
+    newP.classList.add("input_fail");
+    newP.classList.add("fade-in-short");
+    inputMail.classList.add("form_input_invalidated");
+    if (langPL.classList.contains("button_lang_active")) {
+      newP.textContent = mailFailPL;
+    } else {
+      newP.textContent = mailFailENG;
+    }
+    document.querySelector(".form_group_mail").appendChild(newP);
+  }
+  if (checkPhone.test(phoneValue) === false) {
+    const phoneFailPL = "Podaj prawidłowy numer telefonu";
+    const phoneFailENG = "Please provide a valid mobile number";
+    let newP = document.createElement("p");
+    newP.classList.add("input_fail");
+    newP.classList.add("fade-in-short");
+    inputPhone.classList.add("form_input_invalidated");
+    if (langPL.classList.contains("button_lang_active")) {
+      newP.textContent = phoneFailPL;
+    } else {
+      newP.textContent = phoneFailENG;
+    }
+    document.querySelector(".form_group_phone").appendChild(newP);
+  } 
+  if (message === "") {
+    const msgFailPL = "Wiadomość nie może być pusta";
+    const msgFailENG = "The message cannot be empty";
+    let newP = document.createElement("p");
+    newP.classList.add("input_fail");
+    newP.classList.add("fade-in-short");
+    textarea.classList.add("form_input_invalidated");
+    if (langPL.classList.contains("button_lang_active")) {
+      newP.textContent = msgFailPL;
+    } else {
+      newP.textContent = msgFailENG;
+    }
+    document.querySelector(".form_group_msg").appendChild(newP);
+  } if (checkMail.test(emailValue) && checkPhone.test(phoneValue) && message) {
+    return true;
+  }
+}
+
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  for (let i = inputFail.length; i--; ) {
+    inputFail[i].remove();
+  }
+  if (validateForm()) {
+    const formData = new FormData(form);
+    const xhr = new XMLHttpRequest();
+    xhr.addEventListener("error", () => {
+      const failPL = "Nie udało się, spróbuj jeszcze raz.";
+      const failENG = "Something went wrong, please try again.";
+      const postFail = document.createElement("div");
+      const failText = document.createElement("p");
+      postFail.classList.add("form_fail");
+      postFail.classList.add("fade-in-out");
+      if (langPL.classList.contains("button_lang_active")) {
+        failText.textContent = failPL;
+        postFail.appendChild(failText);
+        form.appendChild(postFail);
+      } else {
+        failText.textContent = failENG;
+        postFail.appendChild(failText);
+        form.appendChild(postFail);
+      }
+      setTimeout(() => {
+        postFail.remove();
+      }, 4000)
+    });
+    xhr.addEventListener("load", () => {
+      const successPl = "Dziękuję za wiadomość!";
+      const successENG = "Thank you for your message!";
+      const postSuccess = document.createElement("div");
+      const successText = document.createElement("p");
+      postSuccess.classList.add("form_success");
+      postSuccess.classList.add("fade-in-out");
+      form.reset();
+      if (langPL.classList.contains("button_lang_active")) {
+        successText.textContent = successPl;
+        postSuccess.appendChild(successText);
+        form.appendChild(postSuccess);
+      } else {
+        successText.textContent = successENG;
+        postSuccess.appendChild(successText);
+        form.appendChild(postSuccess);
+      }
+      setTimeout(() => {
+        postSuccess.remove();
+      }, 4000)
+    });
+    xhr.open("POST", form.action);
+    xhr.send(formData);
   }
 });

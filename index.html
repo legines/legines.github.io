@@ -50,10 +50,9 @@
       <h1 class="section_title_start main_title fade-in">Luis Gines</h1>
       <p class="section_subtitle_start main_subtitle fade-in">Full Stack Developer</p>
     </header>
-
+    <!-- About -->
     <section class="section section_about visuallyhidden_section" id="about">
       <img class="me" src="./app/img/profile.jpg" alt="gines dev">
-      <!-- <h2 class="section_title aboutTitle">My name is Luis Gines</h2> -->
       <p class="section_description aboutDescription">I am a <span class="myAge"></span> year old full stack developer from Raleigh, NC with a passion for clean looking code and good programming.  To transition out of my Biochemistry background, I have been working hard through the UNC Coding Bootcamp and self teaching myself to code during my free time. A clean and minimalistic deisgn, in my opinion improves user experience and I am working to improve styling and functionality each day.</p>
       <p class="section_subtitle skillsSubtitle">I am proficient in:</p>
       <ul class="skills">
@@ -79,89 +78,144 @@
         </li>
       </ul>
     </section>
-
-    <div class="section section--projects visuallyhidden--section" id="projects">
-      <p class="projects__nav-info">(Swipe projects to see more)</p>
-      <button class="projects__prev projects__prev--disabled" aria-label="Prev Project">
+    <!-- Projects -->
+    <div class="section section_projects visuallyhidden_section" id="projects">
+      <p class="projects_nav_info">(Swipe projects to see more)</p>
+      <button class="projects_prev projects_prev_disabled" aria-label="Prev Project">
         <span class='icon-left-open' aria-hidden="true"></span>
       </button>
-      <button class="projects__next" aria-label="Next Project">
+      <button class="projects_next" aria-label="Next Project">
         <span class='icon-right-open' aria-hidden="true"></span>
       </button>
       <div class="projects">
-        <section class="projects__project">
-          <h3 class="projects__title">Train Scheduler</h3>
-          <div class="projects__tags">
-            <span class="projects__tag_skill " aria-hidden="true">CRUD</span>
-            <span class="projects__tag_skill " aria-hidden="true">Firebase</span>
-            <span class="projects__tag_skill " aria-hidden="true">Bootstrap</span>
-            <span class="projects__tag_skill " aria-hidden="true">JavaScript</span>
-            <span class="projects__tag_skill " aria-hidden="true">jQuery</span>
-            <span class="projects__tag_skill " aria-hidden="true">CSS</span>
+        <section class="projects_project">
+          <h3 class="projects_title">Train Scheduler</h3>
+          <div class="projects_tags">
+            <span class="projects_tag_skill " aria-hidden="true">CRUD</span>
+            <span class="projects_tag_skill " aria-hidden="true">Firebase</span>
+            <span class="projects_tag_skill " aria-hidden="true">Bootstrap</span>
+            <span class="projects_tag_skill " aria-hidden="true">JavaScript</span>
+            <span class="projects_tag_skill " aria-hidden="true">jQuery</span>
+            <span class="projects_tag_skill " aria-hidden="true">CSS</span>
           </div>
-          <img class="projects__photo" src="./app/img/trainSched.jpg" alt="train scheduler screen">
-          <a class="projects__link projectLive" href="" title="Live train scheduler" target="_blank" rel=”noopener”>Live Preview</a>
-          <p class="projects__description gridDescription">A train scheduling app built using Firebase to store submitted trains for access by all users. Bootstrap and CSS3 make up the layout of the scheduler, JavaScript and jQuery handle the logic, and CSS3 adds simply styling. Users can add, delete, and edit trains on the scheduler.</p>
-          <a class="projects__link projects__link--code projectCode" href="" title="Source Code trains" target="_blank" rel=”noopener”>Source Code</a>
+          <img class="projects_photo" src="./app/img/trainSched.jpg" alt="train scheduler screen">
+          <a class="projects_link projectLive" href="" title="Live train scheduler" target="_blank" rel=”noopener”>Live Preview</a>
+          <p class="projects_description gridDescription">A train scheduling app built using Firebase to store submitted trains for access by all users. Bootstrap and CSS3 make up the layout of the scheduler, JavaScript and jQuery handle the logic, and CSS3 adds simply styling. Users can add, delete, and edit trains on the scheduler.</p>
+          <a class="projects_link projects_link_code projectCode" href="" title="Source Code trains" target="_blank" rel=”noopener”>Source Code</a>
         </section>
-        <section class="projects__project">
-          <h3 class="projects__title">Bamazon</h3>
-          <div class="projects__tags">
-            <span class="projects__tag_skill " aria-hidden="true">HTML</span>
-            <span class="projects__tag_skill " aria-hidden="true">Node</span>
-            <span class="projects__tag_skill " aria-hidden="true">JavaScript</span>
-            <span class="projects__tag_skill " aria-hidden="true">MySQL</span>
+        <section class="projects_project">
+          <h3 class="projects_title">Bamazon</h3>
+          <div class="projects_tags">
+            <span class="projects_tag_skill " aria-hidden="true">HTML</span>
+            <span class="projects_tag_skill " aria-hidden="true">Node</span>
+            <span class="projects_tag_skill " aria-hidden="true">JavaScript</span>
+            <span class="projects_tag_skill " aria-hidden="true">MySQL</span>
           </div>
-          <img class="projects__photo" src="./app/img/azon.png" alt="bamazon screen">
-          <a class="projects__link projectLive" href="" title="Zobacz CSS Grid Playground" target="_blank" rel=”noopener”>Live Preview</a>
-          <p class="projects__description gridDescription">Bamazon is an Amazon like command-line interface for customers. As a customer Users can select which item they want by ID and order items as long as they are in stock. More options to modify stock open up as a manager and supervisor, such as, adding new products, updating inventory and viewing current inventory.</p>
-          <a class="projects__link projects__link--code projectCode" href="" title="Source Code Bamazon" target="_blank" rel=”noopener”>Source Code</a>
+          <img class="projects_photo" src="./app/img/azon.png" alt="bamazon screen">
+          <a class="projects_link projectLive" href="" title="Zobacz CSS Grid Playground" target="_blank" rel=”noopener”>Live Preview</a>
+          <p class="projects_description gridDescription">Bamazon is an Amazon like command-line interface for customers. As a customer Users can select which item they want by ID and order items as long as they are in stock. More options to modify stock open up as a manager and supervisor, such as, adding new products, updating inventory and viewing current inventory.</p>
+          <a class="projects_link projects_link_code projectCode" href="" title="Source Code Bamazon" target="_blank" rel=”noopener”>Source Code</a>
         </section>
-        <section class="projects__project">
-          <h3 class="projects__title">Rhyme Shark</h3>
-          <div class="projects__tags">
-            <span class="projects__tag_skill " aria-hidden="true">HTML</span>
-            <span class="projects__tag_skill " aria-hidden="true">CSS</span>
-            <span class="projects__tag_skill " aria-hidden="true">jQuery</span>
-            <span class="projects__tag_skill " aria-hidden="true">JavaScript</span>
+        <section class="projects_project">
+          <h3 class="projects_title">Rhyme Shark</h3>
+          <div class="projects_tags">
+            <span class="projects_tag_skill " aria-hidden="true">HTML</span>
+            <span class="projects_tag_skill " aria-hidden="true">CSS</span>
+            <span class="projects_tag_skill " aria-hidden="true">jQuery</span>
+            <span class="projects_tag_skill " aria-hidden="true">JavaScript</span>
           </div>
-          <img class="projects__photo" src="./app/img/rhyme.png" alt="rhymeshark screen">
-          <a class="projects__link projectLive" href="" title="Live Rhyme Shark screen" target="_blank" rel=”noopener”>Live Preview</a>
-          <p class="projects__description gridDescription">A ghostwriting app utilizing APIs to help users find the perfect words for their songs. The Musixmatch API is used to present songs and lyrics that contain the searched word. Users will have the opportunity to apply certain filers to their searches. This is used to show the user examples of how their word of interest is used by other artists.</p>
-          <a class="projects__link projects__link--code projectCode" href="" title="Source Code rhymes" target="_blank" rel=”noopener”>Source Code</a>
+          <img class="projects_photo" src="./app/img/rhyme.png" alt="rhymeshark screen">
+          <a class="projects_link projectLive" href="" title="Live Rhyme Shark screen" target="_blank" rel=”noopener”>Live Preview</a>
+          <p class="projects_description gridDescription">A ghostwriting app utilizing APIs to help users find the perfect words for their songs. The Musixmatch API is used to present songs and lyrics that contain the searched word. Users will have the opportunity to apply certain filers to their searches. This is used to show the user examples of how their word of interest is used by other artists.</p>
+          <a class="projects_link projects_link_code projectCode" href="" title="Source Code rhymes" target="_blank" rel=”noopener”>Source Code</a>
         </section>
-        <section class="projects__project">
-          <h3 class="projects__title">Friend Finder</h3>
-          <div class="projects__tags">
-            <span class="projects__tag_skill " aria-hidden="true">HTML</span>
-            <span class="projects__tag_skill " aria-hidden="true">Bootstrap</span>
-            <span class="projects__tag_skill " aria-hidden="true">JavaScript</span>
-            <span class="projects__tag_skill " aria-hidden="true">Node</span>
-            <span class="projects__tag_skill " aria-hidden="true">Express</span>
+        <section class="projects_project">
+          <h3 class="projects_title">Friend Finder</h3>
+          <div class="projects_tags">
+            <span class="projects_tag_skill " aria-hidden="true">HTML</span>
+            <span class="projects_tag_skill " aria-hidden="true">Bootstrap</span>
+            <span class="projects_tag_skill " aria-hidden="true">JavaScript</span>
+            <span class="projects_tag_skill " aria-hidden="true">Node</span>
+            <span class="projects_tag_skill " aria-hidden="true">Express</span>
           </div>
-          <img class="projects__photo" src="./app/img/friend.png" alt="friend screen">
-          <a class="projects__link projectLive" href="https://friendfinder13.herokuapp.com/" title="Live Friend Finder screen" target="_blank" rel=”noopener”>Live Preview</a>
-          <p class="projects__description gridDescription">A compatibility-based "FriendFinder" application where users take a survey and are matched up with a friend whose score on the survey was closest to the users input.</p>
-          <a class="projects__link projects__link--code projectCode" href="https://github.com/legines/FriendFinder" title="Source Code rhymes" target="_blank" rel=”noopener”>Source Code</a>
+          <img class="projects_photo" src="./app/img/friend.png" alt="friend screen">
+          <a class="projects_link projectLive" href="https://friendfinder13.herokuapp.com/" title="Live Friend Finder screen" target="_blank" rel=”noopener”>Live Preview</a>
+          <p class="projects_description gridDescription">A compatibility-based "FriendFinder" application where users take a survey and are matched up with a friend whose score on the survey was closest to the users input.</p>
+          <a class="projects_link projects_link_code projectCode" href="https://github.com/legines/FriendFinder" title="Source Code friends" target="_blank" rel=”noopener”>Source Code</a>
         </section>
-        
-
-
-
+        <section class="projects_project">
+          <h3 class="projects_title">Eat-da-Burger!</h3>
+          <div class="projects_tags">
+            <span class="projects_tag_skill " aria-hidden="true">Express</span>
+            <span class="projects_tag_skill " aria-hidden="true">Node</span>
+            <span class="projects_tag_skill " aria-hidden="true">MySQL</span>
+            <span class="projects_tag_skill " aria-hidden="true">MVC Architecture</span>
+            <span class="projects_tag_skill " aria-hidden="true">Handlebars</span>
+          </div>
+          <img class="projects_photo" src="./app/img/burger.png" alt="burger screen">
+          <a class="projects_link projectLive" href="https://hidden-wave-40839.herokuapp.com" title="Live Burger screen" target="_blank" rel=”noopener”>Live Preview</a>
+          <p class="projects_description gridDescription">A restaurant app that lets users input the names of burgers they'd like to eat. Users can submit and "eat" burgers, both of which changes the burgers properties in the database</p>
+          <a class="projects_link projects_link_code projectCode" href="https://github.com/legines/burger" title="Source Code burger" target="_blank" rel=”noopener”>Source Code</a>
+        </section>
       </div>
     </div>
-
+    <!-- Contact -->
+    <section class="section section_contact visuallyhidden_section" id="contact">
+      <h2 class="section_title section_title_contact contactTitle">Lets chat!</h2>
+      <div class="contact">
+        <form class="form" action="formularz.php" method="POST">
+          <div class="form_group form_group_mail">
+            <label for="inputMail" class="mailLabel">E-Mail</label>
+            <input type="email" class="form_input form_input_mail" id="inputMail" placeholder="address@email.com" name="email" autocomplete="email">
+          </div>
+          <div class="form_group form_group_phone">
+            <label for="inputPhone" class="phoneLabel">Phone <span class="form_optional">(optional)</span></label>
+            <input type="tel" maxlength="9" class="form_input form_input_phone" id="inputPhone" placeholder="555555555" name="phone" title="user phone number" autocomplete="tel">
+          </div>
+          <div class="form_group form_group_msg">
+            <label for="inputText" class="textLabel">Enter your message</label>
+            <textarea id="inputText" class="form_textarea" placeholder="Sweet site." name="message"></textarea>
+          </div>
+          <input type="submit" class="form_button" value="Submit" aria-label="Submit your message" name="submit" id="buttonSubmit">
+        </form>
+        <ul class="socials">
+          <li class="socials_list_item">
+            <a class="socials_item" href="tel:9193068926" target="_blank" rel=”noopener”>
+              <span class="icon icon_social icon-phone" aria-hidden="true"></span>
+              <p class="phone">919 306 8926</p>
+            </a>
+          </li>
+          <li class="socials_list_item">
+            <a class="socials_item" href="mailto:legines@gmail.com" target="_blank" rel=”noopener”>
+              <span class="icon icon_social icon-mail-alt" aria-hidden="true"></span>
+              <p class="mail">legines@gmail.com</p>
+            </a>
+          </li>
+          <li class="socials_list_item">
+            <a class="socials_item" href="https://github.com/legines" target="_blank" rel=”noopener”>
+              <span class="icon icon_social icon-github-circled" aria-hidden="true"></span>
+              <p class="github">My GitHub</p>
+            </a>
+          </li>
+          <li class="socials_list_item">
+            <a class="socials_item" href="https://www.linkedin.com/in/luis-gines/" target="_blank" rel=”noopener”>
+              <span class="icon icon_social icon-linkedin-squared" aria-hidden="true"></span>
+              <p class="linkedin">My LinkedIn</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
   </main>
 
-
-
+  <!-- Footer -->
   <footer id="footer" class="footer theme">
     <p class="foot_copyright">Copyright &copy; 2018 - <span id="foot_year"></span> - <a class="foot_link" href="#" rel="noopener">gines.dev</a></P>
   </footer>
 
   <!-- JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/1.2.0/trianglify.min.js"></script>
   <script src="./app/js/siema.min.js"></script>
   <script src="./app/js/main.js"></script>
+
 </body>
 </html>
