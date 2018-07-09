@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,17 +17,18 @@
   <link rel="stylesheet" href="./app/css/devicons.css">
   <link rel="stylesheet" href="./app/css/fontello.css">
 </head>
+
 <body id="body" class="body overflow-off">
-  
-    <!-- contains fade div -->
-    <div class="overlay" aria-hidden="true">
-      <p class="overlay_text"></p>
-    </div>
+
+  <!-- contains fade div -->
+  <div class="overlay" aria-hidden="true">
+    <p class="overlay_text"></p>
+  </div>
   <!-- Nabar -->
   <nav class="nav theme">
     <a class="nav_link nav_link_start" href="#start" title="GinesDev">
       <img class="nav_logo" src="./app/img/logo2.png" alt="gines dev">
-    </a> 
+    </a>
     <ul class="nav_list">
       <li class="nav_item">
         <a class="nav_link theme_link nav_about" href="#about" title="About">About</a>
@@ -43,6 +45,8 @@
         </div>
       </li>
     </ul>
+    <button class="nav_hamburger icon-menu" aria-label="Open menu" title="Open menu"></button>
+    <button class="nav_close_menu icon-cancel" aria-label="Close menu" title="Close menu"></button>
   </nav>
   <!-- Home Page -->
   <main class="container theme">
@@ -53,7 +57,11 @@
     <!-- About -->
     <section class="section section_about visuallyhidden_section" id="about">
       <img class="me" src="./app/img/profile.jpg" alt="gines dev">
-      <p class="section_description aboutDescription">I am a <span class="myAge"></span> year old full stack developer from Raleigh, NC with a passion for clean looking code and good programming.  To transition out of my Biochemistry background, I have been working hard through the UNC Coding Bootcamp and self teaching myself to code during my free time. A clean and minimalistic deisgn, in my opinion improves user experience and I am working to improve styling and functionality each day.</p>
+      <p class="section_description aboutDescription">I am a
+        <span class="myAge"></span> year old full stack developer from Raleigh, NC with a passion for clean looking code and good programming.
+        To transition out of my Biochemistry background, I have been working hard through the UNC Coding Bootcamp and self
+        teaching myself to code during my free time. A clean and minimalistic deisgn, in my opinion improves user experience
+        and I am working to improve styling and functionality each day.</p>
       <p class="section_subtitle skillsSubtitle">I am proficient in:</p>
       <ul class="skills">
         <li class="skills_ico">
@@ -73,8 +81,8 @@
           <p class="skill_text">Github</p>
         </li>
         <li class="skills_ico">
-            <i class="devicons devicons-nodejs_small" aria-hidden="true"></i>
-            <p class="skill_text">NodeJS</p>
+          <i class="devicons devicons-nodejs_small" aria-hidden="true"></i>
+          <p class="skill_text">NodeJS</p>
         </li>
       </ul>
     </section>
@@ -100,7 +108,9 @@
           </div>
           <img class="projects_photo" src="./app/img/trainSched.jpg" alt="train scheduler screen">
           <a class="projects_link projectLive" href="" title="Live train scheduler" target="_blank" rel=”noopener”>Live Preview</a>
-          <p class="projects_description gridDescription">A train scheduling app built using Firebase to store submitted trains for access by all users. Bootstrap and CSS3 make up the layout of the scheduler, JavaScript and jQuery handle the logic, and CSS3 adds simply styling. Users can add, delete, and edit trains on the scheduler.</p>
+          <p class="projects_description gridDescription">A train scheduling app built using Firebase to store submitted trains for access by all users. Bootstrap and CSS3
+            make up the layout of the scheduler, JavaScript and jQuery handle the logic, and CSS3 adds simply styling. Users
+            can add, delete, and edit trains on the scheduler.</p>
           <a class="projects_link projects_link_code projectCode" href="" title="Source Code trains" target="_blank" rel=”noopener”>Source Code</a>
         </section>
         <section class="projects_project">
@@ -113,7 +123,9 @@
           </div>
           <img class="projects_photo" src="./app/img/azon.png" alt="bamazon screen">
           <a class="projects_link projectLive" href="" title="Zobacz CSS Grid Playground" target="_blank" rel=”noopener”>Live Preview</a>
-          <p class="projects_description gridDescription">Bamazon is an Amazon like command-line interface for customers. As a customer Users can select which item they want by ID and order items as long as they are in stock. More options to modify stock open up as a manager and supervisor, such as, adding new products, updating inventory and viewing current inventory.</p>
+          <p class="projects_description gridDescription">Bamazon is an Amazon like command-line interface for customers. As a customer Users can select which item they
+            want by ID and order items as long as they are in stock. More options to modify stock open up as a manager and
+            supervisor, such as, adding new products, updating inventory and viewing current inventory.</p>
           <a class="projects_link projects_link_code projectCode" href="" title="Source Code Bamazon" target="_blank" rel=”noopener”>Source Code</a>
         </section>
         <section class="projects_project">
@@ -126,7 +138,10 @@
           </div>
           <img class="projects_photo" src="./app/img/rhyme.png" alt="rhymeshark screen">
           <a class="projects_link projectLive" href="" title="Live Rhyme Shark" target="_blank" rel=”noopener”>Live Preview</a>
-          <p class="projects_description gridDescription">A ghostwriting app utilizing APIs to help users find the perfect words for their songs. The Musixmatch API is used to present songs and lyrics that contain the searched word. Users will have the opportunity to apply certain filers to their searches. This is used to show the user examples of how their word of interest is used by other artists.</p>
+          <p class="projects_description gridDescription">A ghostwriting app utilizing APIs to help users find the perfect words for their songs. The Musixmatch API is used
+            to present songs and lyrics that contain the searched word. Users will have the opportunity to apply certain
+            filers to their searches. This is used to show the user examples of how their word of interest is used by other
+            artists.</p>
           <a class="projects_link projects_link_code projectCode" href="" title="Source Code rhymeshark" target="_blank" rel=”noopener”>Source Code</a>
         </section>
         <section class="projects_project">
@@ -139,9 +154,12 @@
             <span class="projects_tag_skill " aria-hidden="true">Express</span>
           </div>
           <img class="projects_photo" src="./app/img/friend.png" alt="FF screen">
-          <a class="projects_link projectLive" href="https://friendfinder13.herokuapp.com/" title="Live Friend Finder" target="_blank" rel=”noopener”>Live Preview</a>
-          <p class="projects_description gridDescription">A compatibility-based "FriendFinder" application where users take a survey and are matched up with a friend whose score on the survey was closest to the users input.</p>
-          <a class="projects_link projects_link_code projectCode" href="https://github.com/legines/FriendFinder" title="Source Code FF" target="_blank" rel=”noopener”>Source Code</a>
+          <a class="projects_link projectLive" href="https://friendfinder13.herokuapp.com/" title="Live Friend Finder" target="_blank"
+            rel=”noopener”>Live Preview</a>
+          <p class="projects_description gridDescription">A compatibility-based "FriendFinder" application where users take a survey and are matched up with a friend whose
+            score on the survey was closest to the users input.</p>
+          <a class="projects_link projects_link_code projectCode" href="https://github.com/legines/FriendFinder" title="Source Code FF"
+            target="_blank" rel=”noopener”>Source Code</a>
         </section>
         <section class="projects_project">
           <h3 class="projects_title">Eat-da-Burger!</h3>
@@ -154,8 +172,10 @@
           </div>
           <img class="projects_photo" src="./app/img/burger.png" alt="burger screen">
           <a class="projects_link projectLive" href="https://hidden-wave-40839.herokuapp.com" title="Live Burger" target="_blank" rel=”noopener”>Live Preview</a>
-          <p class="projects_description gridDescription">A restaurant app that lets users input the names of burgers they'd like to eat. Users can submit and "eat" burgers, both of which changes the burgers properties in the database</p>
-          <a class="projects_link projects_link_code projectCode" href="https://github.com/legines/burger" title="Source Code burger" target="_blank" rel=”noopener”>Source Code</a>
+          <p class="projects_description gridDescription">A restaurant app that lets users input the names of burgers they'd like to eat. Users can submit and "eat" burgers,
+            both of which changes the burgers properties in the database</p>
+          <a class="projects_link projects_link_code projectCode" href="https://github.com/legines/burger" title="Source Code burger"
+            target="_blank" rel=”noopener”>Source Code</a>
         </section>
         <section class="projects_project">
           <h3 class="projects_title">NC Grand Prix</h3>
@@ -169,9 +189,14 @@
             <span class="projects_tag_skill " aria-hidden="true">Sequelize</span>
           </div>
           <img class="projects_photo" src="./app/img/NCGP.png" alt="NCGP screen">
-          <a class="projects_link projectLive" href="https://powerful-ocean-95718.herokuapp.com" title="Live NCGP" target="_blank" rel=”noopener”>Live Preview</a>
-          <p class="projects_description gridDescription">This app aims to let users compare their daily commute routes against Formula 1 drivers. Up to date F1 2018 results are displayed using on change events and users can choose which driver they would like to compare themselves to. Future additions will let users who enjoy to race compare their own track results against Formula 1 Drivers on courses with similar distance to their own.</p>
-          <a class="projects_link projects_link_code projectCode" href="https://github.com/legines/NC_GrandPrix" title="Source Code NCGP" target="_blank" rel=”noopener”>Source Code</a>
+          <a class="projects_link projectLive" href="https://powerful-ocean-95718.herokuapp.com" title="Live NCGP" target="_blank"
+            rel=”noopener”>Live Preview</a>
+          <p class="projects_description gridDescription">This app aims to let users compare their daily commute routes against Formula 1 drivers. Up to date F1 2018 results
+            are displayed using on change events and users can choose which driver they would like to compare themselves
+            to. Future additions will let users who enjoy to race compare their own track results against Formula 1 Drivers
+            on courses with similar distance to their own.</p>
+          <a class="projects_link projects_link_code projectCode" href="https://github.com/legines/NC_GrandPrix" title="Source Code NCGP"
+            target="_blank" rel=”noopener”>Source Code</a>
         </section>
       </div>
     </div>
@@ -185,8 +210,11 @@
             <input type="email" class="form_input form_input_mail" id="inputMail" placeholder="address@email.com" name="email" autocomplete="email">
           </div>
           <div class="form_group form_group_phone">
-            <label for="inputPhone" class="phoneLabel">Phone <span class="form_optional">(optional)</span></label>
-            <input type="tel" maxlength="9" class="form_input form_input_phone" id="inputPhone" placeholder="555555555" name="phone" title="user phone number" autocomplete="tel">
+            <label for="inputPhone" class="phoneLabel">Phone
+              <span class="form_optional">(optional)</span>
+            </label>
+            <input type="tel" maxlength="9" class="form_input form_input_phone" id="inputPhone" placeholder="555555555" name="phone"
+              title="user phone number" autocomplete="tel">
           </div>
           <div class="form_group form_group_msg">
             <label for="inputText" class="textLabel">Enter your message</label>
@@ -226,7 +254,10 @@
 
   <!-- Footer -->
   <footer id="footer" class="footer theme">
-    <p class="foot_copyright">Copyright &copy; 2018 - <span id="foot_year"></span> - <a class="foot_link" href="#" rel="noopener">gines.dev</a></P>
+    <p class="foot_copyright">Copyright &copy; 2018 -
+      <span id="foot_year"></span> -
+      <a class="foot_link" href="#" rel="noopener">gines.dev</a>
+    </P>
   </footer>
 
   <!-- JS -->
@@ -234,4 +265,5 @@
   <script src="./app/js/main.js"></script>
 
 </body>
+
 </html>

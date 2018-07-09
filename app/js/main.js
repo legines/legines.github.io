@@ -14,7 +14,11 @@ const sectionTitle = document.querySelector(".section_title_start");
 const sectionSubtitle = document.querySelector(".section_subtitle_start");
 
 // Nav elements
+const navList = document.querySelector(".nav_list");
 const navLinkStart = document.querySelector(".nav_link_start");
+const navLinks = document.querySelectorAll(".nav_link");
+const hamburger = document.querySelector(".nav_hamburger");
+const closeHamburger = document.querySelector(".nav_close_menu");
 
 // Footer stuff
 const footer = document.querySelector(".footer");
@@ -74,6 +78,47 @@ function checkTime(){
     overlayText.textContent = "Go to bed";
   }
 }
+
+// Mobile menu showing hamburger
+
+hamburger.addEventListener("click", () => {
+  hamburger.style.display = "none";
+  closeHamburger.style.display = "block";
+  navList.classList.add("nav_list_expanded");
+});
+
+closeHamburger.addEventListener("click", () => {
+  hamburger.style.display = "block";
+  closeHamburger.style.display = "none";
+  navList.classList.remove("nav_list_expanded");
+});
+
+for (let link of navLinks) {
+  link.addEventListener("click", e => {
+    checkHashAndHideSections(e);
+    if (window.matchMedia("(max-width: 851px)").matches) {
+      hamburger.style.display = "block";
+      closeHamburger.style.display = "none";
+      navList.classList.remove("nav_list_expanded");
+    } else {
+      return;
+    }
+  });
+}
+
+navLinkStart.addEventListener("click", () => {
+  if (window.matchMedia("(max-width: 851px)").matches) {
+    if (navList.classList.contains("nav_list_expanded")) {
+      navList.classList.remove("nav_list_expanded");
+      hamburger.style.display = "block";
+      closeHamburger.style.display = "none";
+    } else {
+      return;
+    }
+  } else {
+    return;
+  }
+});
 
 // Footy Copyright date function
 function currentYear(){
