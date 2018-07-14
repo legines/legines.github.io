@@ -57,13 +57,18 @@
   border: none;
   background: none;
   margin-left: auto;
-  cursor: pointer; }
+  cursor: pointer;
+  color: #cccccc; 
+}
   @media screen and (min-width: 851px) {
     .nav_hamburger, .nav_close_menu {
-      display: none; } }
+      display: none; 
+    } 
+  }
 
 .nav_close_menu {
-  display: none; }
+  display: none; 
+}
 
 .nav_list {
   display: -webkit-box;

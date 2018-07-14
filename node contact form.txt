@@ -1,0 +1,1 @@
+use mongo to store contact form and email. then use a node package for emails to send email.
