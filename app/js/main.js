@@ -288,109 +288,109 @@ document.addEventListener("keyup", (event) => {
 
 // Form validation
 
-function validateForm() {
-  let emailValue = inputMail.value;
-  let phoneValue = inputPhone.value;
-  let message = textarea.value;
-  inputMail.classList.remove("form_input_invalidated");
-  inputPhone.classList.remove("form_input_invalidated");
-  textarea.classList.remove("form_input_invalidated");
-  if (checkMail.test(emailValue) === false) {
-    const mailFailPL = "Podaj prawidłowy adres e-mail";
-    const mailFailENG = "Please provide a valid email address";
-    let newP = document.createElement("p");
-    newP.classList.add("input_fail");
-    newP.classList.add("fade-in-short");
-    inputMail.classList.add("form_input_invalidated");
-    if (langPL.classList.contains("button_lang_active")) {
-      newP.textContent = mailFailPL;
-    } else {
-      newP.textContent = mailFailENG;
-    }
-    document.querySelector(".form_group_mail").appendChild(newP);
-  }
-  if (checkPhone.test(phoneValue) === false) {
-    const phoneFailPL = "Podaj prawidłowy numer telefonu";
-    const phoneFailENG = "Please provide a valid mobile number";
-    let newP = document.createElement("p");
-    newP.classList.add("input_fail");
-    newP.classList.add("fade-in-short");
-    inputPhone.classList.add("form_input_invalidated");
-    if (langPL.classList.contains("button_lang_active")) {
-      newP.textContent = phoneFailPL;
-    } else {
-      newP.textContent = phoneFailENG;
-    }
-    document.querySelector(".form_group_phone").appendChild(newP);
-  } 
-  if (message === "") {
-    const msgFailPL = "Wiadomość nie może być pusta";
-    const msgFailENG = "The message cannot be empty";
-    let newP = document.createElement("p");
-    newP.classList.add("input_fail");
-    newP.classList.add("fade-in-short");
-    textarea.classList.add("form_input_invalidated");
-    if (langPL.classList.contains("button_lang_active")) {
-      newP.textContent = msgFailPL;
-    } else {
-      newP.textContent = msgFailENG;
-    }
-    document.querySelector(".form_group_msg").appendChild(newP);
-  } if (checkMail.test(emailValue) && checkPhone.test(phoneValue) && message) {
-    return true;
-  }
-}
+// function validateForm() {
+//   let emailValue = inputMail.value;
+//   let phoneValue = inputPhone.value;
+//   let message = textarea.value;
+//   inputMail.classList.remove("form_input_invalidated");
+//   inputPhone.classList.remove("form_input_invalidated");
+//   textarea.classList.remove("form_input_invalidated");
+//   if (checkMail.test(emailValue) === false) {
+//     const mailFailPL = "Podaj prawidłowy adres e-mail";
+//     const mailFailENG = "Please provide a valid email address";
+//     let newP = document.createElement("p");
+//     newP.classList.add("input_fail");
+//     newP.classList.add("fade-in-short");
+//     inputMail.classList.add("form_input_invalidated");
+//     if (langPL.classList.contains("button_lang_active")) {
+//       newP.textContent = mailFailPL;
+//     } else {
+//       newP.textContent = mailFailENG;
+//     }
+//     document.querySelector(".form_group_mail").appendChild(newP);
+//   }
+//   if (checkPhone.test(phoneValue) === false) {
+//     const phoneFailPL = "Podaj prawidłowy numer telefonu";
+//     const phoneFailENG = "Please provide a valid mobile number";
+//     let newP = document.createElement("p");
+//     newP.classList.add("input_fail");
+//     newP.classList.add("fade-in-short");
+//     inputPhone.classList.add("form_input_invalidated");
+//     if (langPL.classList.contains("button_lang_active")) {
+//       newP.textContent = phoneFailPL;
+//     } else {
+//       newP.textContent = phoneFailENG;
+//     }
+//     document.querySelector(".form_group_phone").appendChild(newP);
+//   } 
+//   if (message === "") {
+//     const msgFailPL = "Wiadomość nie może być pusta";
+//     const msgFailENG = "The message cannot be empty";
+//     let newP = document.createElement("p");
+//     newP.classList.add("input_fail");
+//     newP.classList.add("fade-in-short");
+//     textarea.classList.add("form_input_invalidated");
+//     if (langPL.classList.contains("button_lang_active")) {
+//       newP.textContent = msgFailPL;
+//     } else {
+//       newP.textContent = msgFailENG;
+//     }
+//     document.querySelector(".form_group_msg").appendChild(newP);
+//   } if (checkMail.test(emailValue) && checkPhone.test(phoneValue) && message) {
+//     return true;
+//   }
+// }
 
-form.addEventListener("submit", e => {
-  e.preventDefault();
-  for (let i = inputFail.length; i--; ) {
-    inputFail[i].remove();
-  }
-  if (validateForm()) {
-    const formData = new FormData(form);
-    const xhr = new XMLHttpRequest();
-    xhr.addEventListener("error", () => {
-      const failPL = "Nie udało się, spróbuj jeszcze raz.";
-      const failENG = "Something went wrong, please try again.";
-      const postFail = document.createElement("div");
-      const failText = document.createElement("p");
-      postFail.classList.add("form_fail");
-      postFail.classList.add("fade-in-out");
-      if (langPL.classList.contains("button_lang_active")) {
-        failText.textContent = failPL;
-        postFail.appendChild(failText);
-        form.appendChild(postFail);
-      } else {
-        failText.textContent = failENG;
-        postFail.appendChild(failText);
-        form.appendChild(postFail);
-      }
-      setTimeout(() => {
-        postFail.remove();
-      }, 4000)
-    });
-    xhr.addEventListener("load", () => {
-      const successPl = "Dziękuję za wiadomość!";
-      const successENG = "Thank you for your message!";
-      const postSuccess = document.createElement("div");
-      const successText = document.createElement("p");
-      postSuccess.classList.add("form_success");
-      postSuccess.classList.add("fade-in-out");
-      form.reset();
-      if (langPL.classList.contains("button_lang_active")) {
-        successText.textContent = successPl;
-        postSuccess.appendChild(successText);
-        form.appendChild(postSuccess);
-      } else {
-        successText.textContent = successENG;
-        postSuccess.appendChild(successText);
-        form.appendChild(postSuccess);
-      }
-      setTimeout(() => {
-        postSuccess.remove();
-      }, 4000)
-    });
-    xhr.open("POST", form.action);
-    xhr.send(formData);
-  }
-});
+// form.addEventListener("submit", e => {
+//   e.preventDefault();
+//   for (let i = inputFail.length; i--; ) {
+//     inputFail[i].remove();
+//   }
+//   if (validateForm()) {
+//     const formData = new FormData(form);
+//     const xhr = new XMLHttpRequest();
+//     xhr.addEventListener("error", () => {
+//       const failPL = "Nie udało się, spróbuj jeszcze raz.";
+//       const failENG = "Something went wrong, please try again.";
+//       const postFail = document.createElement("div");
+//       const failText = document.createElement("p");
+//       postFail.classList.add("form_fail");
+//       postFail.classList.add("fade-in-out");
+//       if (langPL.classList.contains("button_lang_active")) {
+//         failText.textContent = failPL;
+//         postFail.appendChild(failText);
+//         form.appendChild(postFail);
+//       } else {
+//         failText.textContent = failENG;
+//         postFail.appendChild(failText);
+//         form.appendChild(postFail);
+//       }
+//       setTimeout(() => {
+//         postFail.remove();
+//       }, 4000)
+//     });
+//     xhr.addEventListener("load", () => {
+//       const successPl = "Dziękuję za wiadomość!";
+//       const successENG = "Thank you for your message!";
+//       const postSuccess = document.createElement("div");
+//       const successText = document.createElement("p");
+//       postSuccess.classList.add("form_success");
+//       postSuccess.classList.add("fade-in-out");
+//       form.reset();
+//       if (langPL.classList.contains("button_lang_active")) {
+//         successText.textContent = successPl;
+//         postSuccess.appendChild(successText);
+//         form.appendChild(postSuccess);
+//       } else {
+//         successText.textContent = successENG;
+//         postSuccess.appendChild(successText);
+//         form.appendChild(postSuccess);
+//       }
+//       setTimeout(() => {
+//         postSuccess.remove();
+//       }, 4000)
+//     });
+//     xhr.open("POST", form.action);
+//     xhr.send(formData);
+//   }
+// });

@@ -218,23 +218,23 @@
     <section class="section section_contact visuallyhidden_section" id="contact">
       <h2 class="section_title section_title_contact contactTitle">Lets chat!</h2>
       <div class="contact">
-        <form class="form" action="formularz.php" method="POST">
+        <form class="form" action="https://formspree.io/legines@gmail.com" method="POST">
           <div class="form_group form_group_mail">
             <label for="inputMail" class="mailLabel">E-Mail</label>
-            <input type="email" class="form_input form_input_mail" id="inputMail" placeholder="address@email.com" name="email" autocomplete="email">
+            <input type="email" name="_replyto" class="form_input form_input_mail" id="inputMail" placeholder="address@email.com" name="email" autocomplete="email">
           </div>
           <div class="form_group form_group_phone">
-            <label for="inputPhone" class="phoneLabel">Phone
+            <label for="inputPhone" class="phoneLabel">Name
               <span class="form_optional">(optional)</span>
             </label>
-            <input type="tel" maxlength="9" class="form_input form_input_phone" id="inputPhone" placeholder="555555555" name="phone"
+            <input type="text" name="name" maxlength="12" class="form_input form_input_phone" id="inputPhone" placeholder="Your Name" name="phone"
               title="user phone number" autocomplete="tel">
           </div>
           <div class="form_group form_group_msg">
             <label for="inputText" class="textLabel">Enter your message</label>
             <textarea id="inputText" class="form_textarea" placeholder="Sweet site." name="message"></textarea>
           </div>
-          <input type="submit" class="form_button" value="Submit" aria-label="Submit your message" name="submit" id="buttonSubmit">
+          <input type="submit" class="form_button" value="Send" aria-label="Submit your message" name="submit" id="buttonSubmit">
         </form>
         <ul class="socials">
           <li class="socials_list_item">
